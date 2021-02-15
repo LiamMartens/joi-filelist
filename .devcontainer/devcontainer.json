@@ -1,0 +1,8 @@
+{
+  "name": "joi-filelist",
+  "dockerFile": "./dev.dockerfile",
+  "containerUser": "node",
+  "extensions": [
+    "editorconfig.editorconfig"
+  ]
+}

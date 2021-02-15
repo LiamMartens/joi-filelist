@@ -1,0 +1,30 @@
+{
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "joi": "^17.4.0",
+    "semantic-release": "^17.3.9",
+    "typescript": "^4.1.5"
+  },
+  "peerDependencies": {
+    "joi": "^17.0.0"
+  },
+  "name": "joi-filelist",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "git@github.com:LiamMartens/joi-filelist.git",
+  "author": "Liam Martens <hi@liammartens.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -wp .",
+    "semantic-release": "semantic-release"
+  }
+}

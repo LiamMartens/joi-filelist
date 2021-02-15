@@ -1,0 +1,37 @@
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules
+
+default:
+  image: node:14
+  before_script:
+    - mkdir ~/.ssh
+    - |
+      {
+        echo "Host *"
+        echo "    StrictHostKeyChecking no"
+      } | tee --append ~/.ssh/config
+    - eval "$(ssh-agent -s)"
+    - chmod 600 $SSH_KEY && ssh-add $SSH_KEY
+
+stages:
+  - build
+  - release
+
+build:
+  stage: build
+  artifacts:
+    paths:
+      - lib
+    expire_in: 1 week
+  script:
+    - yarn install
+    - yarn build
+
+public:
+  stage: release
+  script:
+    - npx semantic-release
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
