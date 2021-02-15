@@ -38,7 +38,7 @@ build:
   script:
     - yarn build
 
-public:
+release:
   stage: release
   script:
     - npx semantic-release
