@@ -18,7 +18,7 @@
     "joi": "^17.0.0"
   },
   "name": "joi-filelist",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:LiamMartens/joi-filelist.git",
