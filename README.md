@@ -1,4 +1,8 @@
 # joi-filelist
+
+<span class="badge-npmversion"><a href="https://npmjs.org/package/joi-filelist" title="View this project on NPM"><img src="https://img.shields.io/npm/v/joi-filelist.svg" alt="NPM version" /></a></span>
+<span class="badge-npmdownloads"><a href="https://npmjs.org/package/joi-filelist" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/joi-filelist.svg" alt="NPM downloads" /></a></span>
+
 This package provides an extension to `Joi` for `FileList` types (also works on an array of files)
 
 ## Usage
