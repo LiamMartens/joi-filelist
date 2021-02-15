@@ -1,7 +1,7 @@
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
-    - node_modules
+    - node_modules/
 
 default:
   image: node:14
@@ -16,8 +16,18 @@ default:
     - chmod 600 $SSH_KEY && ssh-add $SSH_KEY
 
 stages:
+  - setup
   - build
   - release
+
+setup:
+  stage: setup
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - node_modules/
+  script:
+    - yarn install
 
 build:
   stage: build
@@ -26,7 +36,6 @@ build:
       - lib
     expire_in: 1 week
   script:
-    - yarn install
     - yarn build
 
 public:
